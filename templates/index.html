@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+    <style>
+        form {
+            margin: auto;
+            width: 35%;
+        }
+        .result {
+            margin: auto;
+            width: 35%;
+            border: 2px solid #ccc;
+        }
+        #logo { 
+        position:fixed; 
+        top:0; 
+        left:0; 
+        }
+    </style>
+
+    <head>
+        <h1 style="text-align:center">Water Consumption Forecasting</h1>
+        <title> Water Consumption Forecast</title>
+        <link rel="shortcut icon" href="Images/favicon.ico" />
+        <div id="logo"> 
+            <img src="https://lh3.googleusercontent.com/proxy/Or7TDGIuCVnR1a8yb6stZOY18QMxhhypwlLoSZvc56JZxEolFfu6P41Oh0o9TZhi0ekwYPVshyhk1UGjLbUEosRrP35Cl0MhDd3W8LSTYbGBSsx89sRbnZU"> 
+        </div> 
+    </head>
+
+    <body >
+        
+        <form action="{{ url_for('main') }}" method="POST">
+            <fieldset>
+                <legend>Water Consumption Forecasting</legend>
+                 Forecast for Next Hour for Households (Enter Yes) ?
+                <input name="search_string" type="string" required>
+                <input type="submit">
+            </fieldset>
+        </form>
+        <br>
+
+        <div class="result" align="center">
+            {% if result %}
+                {% for variable, value in original_input.items() %}
+                    <b>{{ variable }}</b> : {{ value }}
+                {% endfor %}
+                <br>
+                <p style="font-size:40px">Prediction for next hour for all households is :</p>
+                <p style="font-size:40px">[B, A, D, C, E]</p>
+                <p style="font-size:50px">{{ result }}</p>
+            {% endif %}
+        </div>
+        
+    </body>
+
+
+</html>

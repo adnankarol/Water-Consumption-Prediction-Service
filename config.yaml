@@ -1,0 +1,16 @@
+# Config File for main.py and app.py
+
+# Storage Path for Data and Model
+water_consumption:
+      data_file: "sample.txt"
+      preprocessed_data: "data_resampled_hour.csv"
+      model_path: "final_model.h5"
+
+# Setting for Training and Window Creation (Value in Hours)
+Settings:
+      n_past: 48
+      n_future: 1
+
+# Features Used for Training the Model
+features:
+      n_features: 5
