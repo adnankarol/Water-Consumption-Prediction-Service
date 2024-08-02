@@ -1,4 +1,4 @@
-# Water Consumption Forecasting
+# Water Consumption Prediction Service 
 A complete end to end system for water consumption forecasting involving Data Preprocessing, Model Building using CNN-LSTM, and Model Deployment using Docker and Flask.
 
 
